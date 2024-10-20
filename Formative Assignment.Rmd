@@ -17,5 +17,14 @@ cars$time <- format(cars$time, digits = 2)
 
 print(cars)
 summary(cars)
+
+library(dplyr)
+
+cars %>%
+  select(speed) %>%
+  mutate(
+    speed_sqrt = speed ^ 2
+  )
+
 ```
 
