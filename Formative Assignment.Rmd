@@ -16,7 +16,7 @@ library(dplyr)
 cars %>%
   select(speed) %>%
   mutate(
-    speed_sqrt = speed ^ 2
+    new_speed = speed ^ 2
   )
 ```
 
