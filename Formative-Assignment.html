@@ -357,70 +357,71 @@ display: none;
 </div>
 
 
-<pre class="r"><code>cars$time &lt;- cars$dist / cars$speed
-cars$time &lt;- format(cars$time, digits = 2) 
-#from: https://dev.programiz.com/r/examples/format-decimal-places#:~:text=Example%201%3A%20Format%20Decimal%20Places%20in%20R%20Using%20sprintf()&amp;text=The%204%20decimal%20places%20are,print%20the%20floating%2Dpoint%20number.
-
-print(cars)</code></pre>
-<pre><code>##    speed dist time
-## 1      4    2 0.50
-## 2      4   10 2.50
-## 3      7    4 0.57
-## 4      7   22 3.14
-## 5      8   16 2.00
-## 6      9   10 1.11
-## 7     10   18 1.80
-## 8     10   26 2.60
-## 9     10   34 3.40
-## 10    11   17 1.55
-## 11    11   28 2.55
-## 12    12   14 1.17
-## 13    12   20 1.67
-## 14    12   24 2.00
-## 15    12   28 2.33
-## 16    13   26 2.00
-## 17    13   34 2.62
-## 18    13   34 2.62
-## 19    13   46 3.54
-## 20    14   26 1.86
-## 21    14   36 2.57
-## 22    14   60 4.29
-## 23    14   80 5.71
-## 24    15   20 1.33
-## 25    15   26 1.73
-## 26    15   54 3.60
-## 27    16   32 2.00
-## 28    16   40 2.50
-## 29    17   32 1.88
-## 30    17   40 2.35
-## 31    17   50 2.94
-## 32    18   42 2.33
-## 33    18   56 3.11
-## 34    18   76 4.22
-## 35    18   84 4.67
-## 36    19   36 1.89
-## 37    19   46 2.42
-## 38    19   68 3.58
-## 39    20   32 1.60
-## 40    20   48 2.40
-## 41    20   52 2.60
-## 42    20   56 2.80
-## 43    20   64 3.20
-## 44    22   66 3.00
-## 45    23   54 2.35
-## 46    24   70 2.92
-## 47    24   92 3.83
-## 48    24   93 3.88
-## 49    24  120 5.00
-## 50    25   85 3.40</code></pre>
-<pre class="r"><code>summary(cars)</code></pre>
-<pre><code>##      speed           dist            time          
-##  Min.   : 4.0   Min.   :  2.00   Length:50         
-##  1st Qu.:12.0   1st Qu.: 26.00   Class :character  
-##  Median :15.0   Median : 36.00   Mode  :character  
-##  Mean   :15.4   Mean   : 42.98                     
-##  3rd Qu.:19.0   3rd Qu.: 56.00                     
-##  Max.   :25.0   Max.   :120.00</code></pre>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>cars %&gt;%
+  select(dist) %&gt;%
+  mutate(
+    dist_dbl = dist * 2
+  )</code></pre>
+<pre><code>##    dist dist_dbl
+## 1     2        4
+## 2    10       20
+## 3     4        8
+## 4    22       44
+## 5    16       32
+## 6    10       20
+## 7    18       36
+## 8    26       52
+## 9    34       68
+## 10   17       34
+## 11   28       56
+## 12   14       28
+## 13   20       40
+## 14   24       48
+## 15   28       56
+## 16   26       52
+## 17   34       68
+## 18   34       68
+## 19   46       92
+## 20   26       52
+## 21   36       72
+## 22   60      120
+## 23   80      160
+## 24   20       40
+## 25   26       52
+## 26   54      108
+## 27   32       64
+## 28   40       80
+## 29   32       64
+## 30   40       80
+## 31   50      100
+## 32   42       84
+## 33   56      112
+## 34   76      152
+## 35   84      168
+## 36   36       72
+## 37   46       92
+## 38   68      136
+## 39   32       64
+## 40   48       96
+## 41   52      104
+## 42   56      112
+## 43   64      128
+## 44   66      132
+## 45   54      108
+## 46   70      140
+## 47   92      184
+## 48   93      186
+## 49  120      240
+## 50   85      170</code></pre>
 
 
 

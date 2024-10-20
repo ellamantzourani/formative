@@ -11,11 +11,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r cars}
 
-cars$time <- cars$dist / cars$speed
-cars$time <- format(cars$time, digits = 2) 
-#from: https://dev.programiz.com/r/examples/format-decimal-places#:~:text=Example%201%3A%20Format%20Decimal%20Places%20in%20R%20Using%20sprintf()&text=The%204%20decimal%20places%20are,print%20the%20floating%2Dpoint%20number.
+library(dplyr)
 
-print(cars)
-summary(cars)
+cars %>%
+  select(dist) %>%
+  mutate(
+    dist_dbl = dist * 2
+  )
 ```
 
