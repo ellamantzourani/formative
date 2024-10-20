@@ -14,9 +14,10 @@ knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 
 cars %>%
-  select(dist) %>%
+  select(dist, speed) %>%
   mutate(
-    dist_dbl = dist * 2
+    dist_dbl = dist * 2,
+    new_speed = speed ^ 2
   )
 ```
 
