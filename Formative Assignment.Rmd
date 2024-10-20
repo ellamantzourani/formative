@@ -1,0 +1,21 @@
+---
+title: "Formative Assignment"
+author: "201818462"
+output: html_document
+date: "2024-10-20"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r cars}
+
+cars$time <- cars$dist / cars$speed
+cars$time <- format(cars$time, digits = 2) 
+#from: https://dev.programiz.com/r/examples/format-decimal-places#:~:text=Example%201%3A%20Format%20Decimal%20Places%20in%20R%20Using%20sprintf()&text=The%204%20decimal%20places%20are,print%20the%20floating%2Dpoint%20number.
+
+print(cars)
+summary(cars)
+```
+
